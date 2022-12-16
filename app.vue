@@ -5,16 +5,21 @@ let weather = reactive({
   coords: "",
   location: "",
 });
-onMounted(async () => {
-  const { data } = await useFetch("/api/weather/rohtak");
+const setValue = (data) => {
   weather.coords = data.value.weather.coords;
   weather.data = data.value.weather.main;
   weather.country = data.value.weather.sys;
   weather.location = data.value.weather.name;
+};
+onMounted(async () => {
+  const { data } = await useFetch("/api/weather/rohtak");
+  setValue(data);
 });
-let locationInput = ref();
-let location = function (event) {
-  locationInput.value = event;
+
+let location = async function (event) {
+  const { data } = await useFetch(`/api/weather/${event}`);
+
+  setValue(data);
 };
 </script>
 <template>

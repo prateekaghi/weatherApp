@@ -1,7 +1,10 @@
 <script setup>
 const input = ref("");
-let location = function () {
-  emit("locationInput", input.value);
+let location = function (e) {
+  if (e.key === "Enter" || e.keyCode === 13) {
+    emit("locationInput", input.value);
+    input.value = "";
+  }
 };
 const emit = defineEmits(["locationInput"]);
 </script>
@@ -12,8 +15,8 @@ const emit = defineEmits(["locationInput"]);
     >
     <div class="mt-1">
       <input
+        @keyup="location"
         v-model="input"
-        @input="location"
         type="text"
         class="block h-10 w-full px-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         placeholder="Enter Location Here"
