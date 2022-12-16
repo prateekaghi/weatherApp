@@ -6,7 +6,7 @@ let weather = reactive({
   location: "",
 });
 onMounted(async () => {
-  const { data } = await useFetch("/api/weather");
+  const { data } = await useFetch("/api/weather/rohtak");
   weather.coords = data.value.weather.coords;
   weather.data = data.value.weather.main;
   weather.country = data.value.weather.sys;
