@@ -1,12 +1,4 @@
 <script setup>
-const colorMode = useColorMode();
-function changeColor() {
-  if (colorMode.value === "light") {
-    colorMode.value = "dark";
-  } else {
-    colorMode.value = "light";
-  }
-}
 let weather = reactive({
   data: "",
   country: "",
