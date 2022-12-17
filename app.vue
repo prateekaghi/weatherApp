@@ -41,7 +41,7 @@ let location = async function (event) {
 </script>
 <template>
   <div class="dark:bg-gray-300 h-screen">
-    <TopNav @color-change="changeColor" />
+    <TopNav />
     <div class="m-20">
       <div class="my-10">
         <Input
