@@ -6,6 +6,7 @@ let location = function (e) {
     input.value = "";
   }
 };
+const props = defineProps(["errorMessage"]);
 const emit = defineEmits(["locationInput"]);
 </script>
 <template>
@@ -22,6 +23,12 @@ const emit = defineEmits(["locationInput"]);
         placeholder="Enter Location Here"
       />
     </div>
-    <p class="mt-2 text-sm text-[#80bd01]">Press Enter to Search.</p>
+    <p
+      v-if="errorMessage.message"
+      class="mt-2 capitalize text-sm text-[#80bd01]"
+    >
+      {{ errorMessage.code }}:{{ errorMessage.message }}
+    </p>
+    <p v-else class="mt-2 text-sm text-[#80bd01]">Press Enter to Search.</p>
   </div>
 </template>

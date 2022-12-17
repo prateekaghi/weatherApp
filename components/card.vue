@@ -1,6 +1,5 @@
 <script setup>
 const props = defineProps(["weatherData"]);
-const currentTime = new Date().getHours();
 </script>
 
 <template>
@@ -21,38 +20,24 @@ const currentTime = new Date().getHours();
             Sunrise/Sunset
           </p>
         </dt>
-        <dd class="flex items-baseline pb-6 sm:pb-7">
-          <p
-            v-if="currentTime >= 10 && currentTime <= 17"
-            class="text-2xl font-semibold text-gray-900"
-          >
+        <dd class="items-baseline pb-6 sm:pb-7">
+          <p class="text-2xl font-semibold text-gray-900">
             Sunset:{{
               new Date(weatherData.country.sunset * 1000).toLocaleTimeString(
                 "en-US"
               )
             }}
           </p>
-          <p v-else class="text-2xl font-semibold text-gray-900">
-            Sunrise:
-            {{
-              new Date(weatherData.country.sunrise * 1000).toLocaleTimeString(
-                "en-US"
-              )
-            }}
-          </p>
 
-          <div class="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-2 sm:px-4">
-            <p v-if="currentTime >= 10 && currentTime <= 17">
+          <p>(As per your current time zone)</p>
+
+          <div
+            class="absolute flex justify-between inset-x-0 bottom-0 bg-gray-50 px-4 py-2 sm:px-4"
+          >
+            <p>
               Sunrise:
               {{
                 new Date(weatherData.country.sunrise * 1000).toLocaleTimeString(
-                  "en-US"
-                )
-              }}
-            </p>
-            <p v-else>
-              Sunset:{{
-                new Date(weatherData.country.sunset * 1000).toLocaleTimeString(
                   "en-US"
                 )
               }}
