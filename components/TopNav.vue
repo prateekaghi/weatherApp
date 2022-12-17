@@ -1,3 +1,10 @@
+<script setup>
+const changeColorMode = function () {
+  emit("colorChange");
+};
+const emit = defineEmits(["colorChange"]);
+</script>
+
 <template>
   <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -7,6 +14,7 @@
         >
           <h1 class="text-[#81bd01] font-semibold text-lg">Weather App</h1>
           <button
+            @click="changeColorMode"
             type="button"
             class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
           >

@@ -1,4 +1,12 @@
 <script setup>
+const colorMode = useColorMode();
+function changeColor() {
+  if (colorMode.value === "light") {
+    colorMode.value = "dark";
+  } else {
+    colorMode.value = "light";
+  }
+}
 let weather = reactive({
   data: "",
   country: "",
@@ -41,7 +49,7 @@ let location = async function (event) {
 </script>
 <template>
   <div>
-    <TopNav />
+    <TopNav @color-change="changeColor" />
     <div class="m-20">
       <div class="my-10">
         <Input
