@@ -1,5 +1,5 @@
 <script setup>
-import { SunIcon } from "@heroicons/vue/24/solid";
+import { SunIcon, MoonIcon } from "@heroicons/vue/24/solid";
 const colorMode = useColorMode();
 const changeColorMode = function () {
   if (colorMode.value === "light") {
@@ -21,11 +21,18 @@ const changeColorMode = function () {
           <button
             @click="changeColorMode"
             type="button"
-            class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+            class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white"
           >
             <span class="sr-only">View notifications</span>
             <!-- Heroicon name: outline/bell -->
-            <SunIcon class="h-6 w-6 text-yellow-300" />
+            <SunIcon
+              v-if="colorMode.value === 'light'"
+              class="h-6 w-6 text-yellow-300"
+            />
+            <MoonIcon
+              v-if="colorMode.value === 'dark'"
+              class="h-6 w-6 text-white"
+            />
           </button>
         </div>
       </div>
