@@ -32,7 +32,7 @@ const emit = defineEmits(["locationInput"]);
         @keyup="location"
         v-model="input"
         type="text"
-        class="block h-10 w-full px-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        class="block h-10 min-w-max w-full px-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         placeholder="Enter Location Here"
       />
     </div>
@@ -42,6 +42,8 @@ const emit = defineEmits(["locationInput"]);
     >
       {{ errorMessage.code }}:{{ errorMessage.message }}
     </p>
-    <p v-else class="mt-2 text-sm text-[#80bd01]">Press Enter to Search.</p>
+    <p v-else class="mt-2 min-w-max text-sm text-[#80bd01]">
+      Press Enter to Search.
+    </p>
   </div>
 </template>

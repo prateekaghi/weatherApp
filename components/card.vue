@@ -13,10 +13,12 @@ const props = defineProps(["weatherData"]);
 
     <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       <div
-        class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
+        class="dark:bg-gray-200 relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
       >
         <dt>
-          <p class="truncate text-sm font-medium text-gray-500">
+          <p
+            class="truncate text-sm font-medium text-gray-500 dark:text-gray-700"
+          >
             Sunrise/Sunset
           </p>
         </dt>
@@ -47,10 +49,12 @@ const props = defineProps(["weatherData"]);
       </div>
 
       <div
-        class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
+        class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6 dark:bg-gray-200"
       >
         <dt>
-          <p class="truncate text-sm font-medium text-gray-500">
+          <p
+            class="truncate text-sm font-medium text-gray-500 dark:text-gray-700"
+          >
             Current Temperature
           </p>
         </dt>
@@ -69,10 +73,12 @@ const props = defineProps(["weatherData"]);
       </div>
 
       <div
-        class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
+        class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6 dark:bg-gray-200"
       >
         <dt>
-          <p class="truncate text-sm font-medium text-gray-500">
+          <p
+            class="truncate text-sm font-medium text-gray-500 dark:text-gray-700"
+          >
             Other Details
           </p>
         </dt>
