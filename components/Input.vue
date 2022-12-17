@@ -1,7 +1,20 @@
 <script setup>
 const input = ref("");
 let location = function (e) {
+  if (
+    (e.keyCode < 65 || e.keyCode > 90) &&
+    e.keyCode !== 32 &&
+    e.keyCode !== 8 &&
+    e.keyCode !== 13 &&
+    e.keyCode !== 93 &&
+    e.keyCode !== 91
+  )
+    alert("Character Not allowed");
   if (e.key === "Enter" || e.keyCode === 13) {
+    if (!input.value) {
+      alert("Input required");
+      return;
+    }
     emit("locationInput", input.value);
     input.value = "";
   }
